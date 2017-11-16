@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
-    </header>
     <main>
-      <img src="./assets/logo.png" alt="FIX PWA">
       <router-view></router-view>
     </main>
   </div>
