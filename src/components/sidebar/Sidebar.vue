@@ -9,19 +9,19 @@
         <strong><router-link to="/" >Home</router-link></strong>
       </li>
       <li>
+        <strong><router-link to="/profile" >Profil</router-link></strong>
+      </li>
+      <li>
+        <strong><router-link to="/wallet" >Portefeuille</router-link></strong>
+      </li>
+      <li>
         <strong><router-link to="/market" >Marché</router-link></strong>
       </li>
       <li>
-        <strong><router-link to="/" >Home</router-link></strong>
+        <strong><router-link to="/order" >Ordre</router-link></strong>
       </li>
       <li>
-        <strong><router-link to="/" >Home</router-link></strong>
-      </li>
-      <li>
-        <strong><router-link to="/" >Home</router-link></strong>
-      </li>
-      <li>
-        <strong><router-link to="/" >Home</router-link></strong>
+        <strong><router-link to="/history" >Mouvements</router-link></strong>
       </li>
 
     </ul>
