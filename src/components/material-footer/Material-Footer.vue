@@ -19,5 +19,16 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+  #footer {
+    height: 160px;
+    margin-left: 0px;
+    transition: margin-left 0.2s;
+    background-color: #0288D1;
+    color: #fff;
+  }
 
+  #footer a {
+    color: #fff;
+    text-decoration: underline;
+  }
 </style>

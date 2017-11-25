@@ -16,5 +16,12 @@
   }
 </script>
 <style scoped>
-
+  #header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    transition: left 0.2s;
+  }
 </style>
