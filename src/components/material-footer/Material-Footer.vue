@@ -2,7 +2,7 @@
   <footer id="footer">
     <div class="mui-container-fluid">
       <br>
-      Made with ♥ by <a href="https://www.muicss.com">MUI</a>
+      Made by <a href="https://www.github.com/mohamedmhiri">Mohamed Mhiri</a> && <a href="https://github.com/nouhabahri">Nouha Bahri</a>
     </div>
   </footer>
 </template>
@@ -18,7 +18,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
   #footer {
     height: 160px;
     margin-left: 0px;

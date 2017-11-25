@@ -57,21 +57,7 @@
     padding-left: 20px;
   }
 
-  /**
-       * Header CSS
-       */
-  .sidedrawer-toggle {
-    color: #fff;
-    cursor: pointer;
-    font-size: 20px;
-    line-height: 20px;
-    margin-right: 10px;
-  }
 
-  .sidedrawer-toggle:hover {
-    color: #fff;
-    text-decoration: none;
-  }
 
   #sidedrawer ul {
     list-style: none;
@@ -97,5 +83,12 @@
 
   #sidedrawer strong + ul > li {
     padding: 6px 0px;
+  }
+
+  /**
+       * Toggle Side drawer
+   */
+  #sidedrawer.active {
+    transform: translate(200px);
   }
 </style>

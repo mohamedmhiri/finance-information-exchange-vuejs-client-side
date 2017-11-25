@@ -24,4 +24,19 @@
     z-index: 2;
     transition: left 0.2s;
   }
+  /**
+       * Header CSS
+       */
+  .sidedrawer-toggle {
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 20px;
+    margin-right: 10px;
+  }
+
+  .sidedrawer-toggle:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 </style>
