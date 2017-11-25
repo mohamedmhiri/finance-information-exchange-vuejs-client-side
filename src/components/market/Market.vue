@@ -1,10 +1,10 @@
 <template>
-
+  <p>Peace</p>
 </template>
 
 <script>
   export default {
-    name: 'material-login',
+    name: 'market',
     data () {
       return {
       }

@@ -6,29 +6,24 @@
     <div class="mui-divider"></div>
     <ul>
       <li>
-        <strong>Category 1</strong>
-        <ul>
-          <li><a href="#">Item 1</a></li>
-          <li><a href="#">Item 2</a></li>
-          <li><a href="#">Item 3</a></li>
-        </ul>
+        <strong><router-link to="/" >Home</router-link></strong>
       </li>
       <li>
-        <strong>Category 2</strong>
-        <ul>
-          <li><a href="#">Item 1</a></li>
-          <li><a href="#">Item 2</a></li>
-          <li><a href="#">Item 3</a></li>
-        </ul>
+        <strong><router-link to="/market" >Marché</router-link></strong>
       </li>
       <li>
-        <strong>Category 3</strong>
-        <ul>
-          <li><a href="#">Item 1</a></li>
-          <li><a href="#">Item 2</a></li>
-          <li><a href="#">Item 3</a></li>
-        </ul>
+        <strong><router-link to="/" >Home</router-link></strong>
       </li>
+      <li>
+        <strong><router-link to="/" >Home</router-link></strong>
+      </li>
+      <li>
+        <strong><router-link to="/" >Home</router-link></strong>
+      </li>
+      <li>
+        <strong><router-link to="/" >Home</router-link></strong>
+      </li>
+
     </ul>
   </div>
 </template>
