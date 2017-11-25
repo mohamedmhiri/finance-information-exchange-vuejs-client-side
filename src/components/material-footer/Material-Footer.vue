@@ -31,4 +31,13 @@
     color: #fff;
     text-decoration: underline;
   }
+
+  @media (min-width: 768px) {
+    #footer {
+      margin-left: 200px;
+    }
+    body.hide-sidedrawer #footer {
+      margin-left: 0;
+    }
+  }
 </style>

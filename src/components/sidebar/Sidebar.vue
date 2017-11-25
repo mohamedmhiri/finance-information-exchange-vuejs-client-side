@@ -91,4 +91,13 @@
   #sidedrawer.active {
     transform: translate(200px);
   }
+
+  @media (min-width: 768px) {
+    #sidedrawer {
+      transform: translate(200px);
+    }
+    body.hide-sidedrawer #sidedrawer {
+      transform: translate(0px);
+    }
+  }
 </style>

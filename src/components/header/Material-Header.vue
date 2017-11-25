@@ -39,4 +39,13 @@
     color: #fff;
     text-decoration: none;
   }
+
+  @media (min-width: 768px) {
+    #header {
+      left: 200px;
+    }
+    body.hide-sidedrawer #header {
+      left: 0;
+    }
+  }
 </style>

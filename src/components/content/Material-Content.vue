@@ -57,4 +57,13 @@
     margin-bottom: -160px;
     padding-bottom: 160px;
   }
+
+  @media (min-width: 768px) {
+    #content-wrapper {
+      margin-left: 200px;
+    }
+    body.hide-sidedrawer #content-wrapper {
+      margin-left: 0;
+    }
+  }
 </style>
