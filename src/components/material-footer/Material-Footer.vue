@@ -25,6 +25,7 @@
     transition: margin-left 0.2s;
     background-color: #0288D1;
     color: #fff;
+    bottom:0;
   }
 
   #footer a {
@@ -35,6 +36,7 @@
   @media (min-width: 768px) {
     #footer {
       margin-left: 200px;
+
     }
     body.hide-sidedrawer #footer {
       margin-left: 0;
