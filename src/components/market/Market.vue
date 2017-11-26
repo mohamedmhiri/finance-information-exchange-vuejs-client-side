@@ -15,14 +15,14 @@
       </thead>
       <tbody>
       <tr v-for="item in market">
-        <td v.text="item.name"></td>
-        <td v.text="item.dernier"></td>
-        <td v.text="item.ouv"></td>
-        <td v.text="item.haut"></td>
-        <td v.text="item.bas"></td>
-        <td v.text="item.volumeTitle"></td>
-        <td v.text="item.volumeDT"></td>
-        <td v.text="item.variation"></td>
+        <td v-text="item.name"></td>
+        <td v-text="item.dernier"></td>
+        <td v-text="item.ouv"></td>
+        <td v-text="item.haut"></td>
+        <td v-text="item.bas"></td>
+        <td v-text="item.volumeTitle"></td>
+        <td v-text="item.volumeDT"></td>
+        <td v-text="item.variation"></td>
       </tr>
       </tbody>
     </table>
