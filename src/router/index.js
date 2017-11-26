@@ -6,6 +6,7 @@ import Order from '../components/order/Order.vue'
 import Profile from '../components/profile/Profile.vue'
 import Wallet from '../components/wallet/Wallet.vue'
 import History from '../components/history/History.vue'
+import MaterialLogin from '../components/material-login/Material-Login.vue'
 
 Vue.use(Router)
 
@@ -42,6 +43,11 @@ export default new Router({
           component: History
         }
       ]
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: MaterialLogin
     }
 
   ]

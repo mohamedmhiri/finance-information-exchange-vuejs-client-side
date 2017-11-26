@@ -1,13 +1,53 @@
 <template>
-  <p>Peace</p>
+  <div>
+    <table class="mui-table mui-table--bordered">
+      <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Dernier</th>
+        <th>Ouv</th>
+        <th>Haut</th>
+        <th>Bas</th>
+        <th>Volume(titres)</th>
+        <th>Volume(DT)</th>
+        <th>variation</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="item in market">
+        <td v.text="item.name"></td>
+        <td v.text="item.dernier"></td>
+        <td v.text="item.ouv"></td>
+        <td v.text="item.haut"></td>
+        <td v.text="item.bas"></td>
+        <td v.text="item.volumeTitle"></td>
+        <td v.text="item.volumeDT"></td>
+        <td v.text="item.variation"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     name: 'market',
     data () {
       return {
+        market: []
       }
+    },
+    mounted () {
+      axios.get(`http://localhost:3000/api/market`)
+        .then(response => {
+          this.market = response.data
+          console.log(this.market)
+        })
+        .catch(error => {
+          console.log(error)
+        })
     }
   }
 </script>
