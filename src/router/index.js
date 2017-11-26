@@ -9,6 +9,7 @@ import History from '../components/history/History.vue'
 import MaterialLogin from '../components/material-login/Material-Login.vue'
 import Palmares from '../components/palmares/Palmares.vue'
 import News from '../components/news/News.vue'
+import Dashboard from '../components/dashboard/Dashboard.vue'
 
 Vue.use(Router)
 
@@ -19,6 +20,11 @@ export default new Router({
       name: 'Hello',
       component: Container,
       children: [
+        {
+          path: '/',
+          name: 'Dashboard',
+          component: Dashboard
+        },
         {
           path: '/market',
           name: 'Market',

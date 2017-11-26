@@ -6,7 +6,7 @@
     <div class="mui-divider"></div>
     <ul>
       <li>
-        <strong><router-link to="/" >Home</router-link></strong>
+        <strong><router-link to="/" >Tableau de board</router-link></strong>
       </li>
       <li>
         <strong><router-link to="/profile" >Profil</router-link></strong>
