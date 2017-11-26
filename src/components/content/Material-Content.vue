@@ -3,7 +3,10 @@
     <div class="mui--appbar-height"></div>
     <div class="mui-container-fluid">
       <br>
-      <router-view></router-view>
+      <div class="mui-panel">
+        <router-view></router-view>
+      </div>
+
     </div>
   </div>
 </template>

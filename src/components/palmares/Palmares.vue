@@ -5,44 +5,39 @@
       <tr>
         <th>Nom</th>
         <th>Dernier</th>
-        <th>Ouv</th>
         <th>Haut</th>
         <th>Bas</th>
-        <th>Volume(titres)</th>
-        <th>Volume(DT)</th>
+        <th>Volume</th>
         <th>variation</th>
       </tr>
       </thead>
       <tbody>
-      <tr v-for="item in market">
+      <tr v-for="item in palmares">
         <td v-text="item.name"></td>
         <td v-text="item.dernier"></td>
-        <td v-text="item.ouv"></td>
         <td v-text="item.haut"></td>
         <td v-text="item.bas"></td>
-        <td v-text="item.volumeTitle"></td>
-        <td v-text="item.volumeDT"></td>
+        <td v-text="item.volume"></td>
         <td v-text="item.variation"></td>
       </tr>
       </tbody>
     </table>
   </div>
-
 </template>
 
 <script>
   import axios from 'axios'
   export default {
-    name: 'market',
+    name: 'palmares',
     data () {
       return {
-        market: []
+        palmares: []
       }
     },
     mounted () {
-      axios.get(`http://localhost:3000/api/market`)
+      axios.get(`http://localhost:3000/api/palmares`)
         .then(response => {
-          this.market = response.data
+          this.palmares = response.data
         })
         .catch(error => {
           console.log(error)

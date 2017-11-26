@@ -23,6 +23,12 @@
       <li>
         <strong><router-link to="/history" >Mouvements</router-link></strong>
       </li>
+      <li>
+        <strong><router-link to="/palmares" >Palmares</router-link></strong>
+      </li>
+      <li>
+        <strong><router-link to="/news" >News</router-link></strong>
+      </li>
 
     </ul>
   </div>
