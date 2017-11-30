@@ -1,5 +1,5 @@
 <template>
-  <p>Order</p>
+  <p>Passer un ordre</p>
 </template>
 
 <script>

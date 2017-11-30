@@ -24,17 +24,17 @@
                 </tr>
                 <tr>
                   <td>
-                    <form class="mui-form">
+                    <form class="mui-form" method="POST" @submit.prevent="onSubmit">
                       <legend>Login</legend>
                       <div class="mui-textfield mui-textfield--float-label">
-                        <input type="text">
+                        <input type="text" v-model="email">
                         <label>E-mail</label>
                       </div>
                       <div class="mui-textfield mui-textfield--float-label">
-                        <input type="password">
+                        <input type="password" v-model="password">
                         <label>Mot de passe</label>
                       </div>
-                      <button type="submit" class="mui-btn mui-btn--raised">Login</button>
+                      <button type="submit" class="mui-btn mui-btn--raised disabled">Login</button>
                     </form>
                   </td>
                 </tr>
@@ -55,6 +55,28 @@
     name: 'material-login',
     data () {
       return {
+        'email': '',
+        'password': '',
+        'errors': {
+          'data': {
+            'email': '',
+            'password': ''
+          }
+        }
+      }
+    },
+    methods: {
+      onSubmit () {
+        if (this.$data.email !== '') {
+
+        } else {
+          this.errors.data.email = 'Veuillez saisir un email'
+        }
+        if (this.$data.password !== '') {
+
+        } else {
+          this.errors.data.password = 'Veuillez saisir le mot de passe'
+        }
       }
     }
   }
