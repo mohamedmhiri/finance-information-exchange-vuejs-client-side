@@ -1,5 +1,6 @@
 <template>
   <div>
+    <input type="text" @click="onClick" v-model="toSearch">
     <table class="mui-table mui-table--bordered">
       <thead>
       <tr>
@@ -31,7 +32,8 @@
     name: 'palmares',
     data () {
       return {
-        palmares: []
+        palmares: [],
+        toSearch: ''
       }
     },
     mounted () {
@@ -42,6 +44,14 @@
         .catch(error => {
           console.log(error)
         })
+    },
+    methods: {
+      onClick () {
+        this.market = this.market
+          .filter(data => {
+            data: new RegExp(`^.*${this.$data.toSearch}.*$`)
+          })
+      }
     }
   }
 </script>
