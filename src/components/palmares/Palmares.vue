@@ -49,7 +49,13 @@
       onClick () {
         this.market = this.market
           .filter(data => {
-            data: new RegExp(`^.*${this.$data.toSearch}.*$`)
+            return (RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.name)
+              || RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.dernier)
+              || RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.haut)
+              || RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.bas)
+              || RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.volume)
+              || RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.variation)
+            )
           })
       }
     }
