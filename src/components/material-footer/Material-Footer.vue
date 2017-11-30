@@ -2,7 +2,7 @@
   <footer id="footer">
     <div class="mui-container-fluid">
       <br>
-      Made by <a href="https://www.github.com/mohamedmhiri">Mohamed Mhiri</a> && <a href="https://github.com/nouhabahri">Nouha Bahri</a>
+      Made by <a href="https://github.com/mohamedmhiri">Mohamed Mhiri</a> && <a href="https://github.com/nouhabahri">Nouha Bahri</a>
     </div>
   </footer>
 </template>

@@ -12,21 +12,23 @@
         <select>
           <option v-for="item in market" v-text="item.name"></option>
         </select>
-        <label>Sens</label>
+        <label>Nom</label>
+      </div>
+      <div class="mui-textfield mui-textfield--float-label">
+        <input type="number">
+        <label>Quantité</label>
+      </div>
+      <div class="mui-select">
+        <select>
+          <option v-for="item in type" v-text="item"></option>
+        </select>
+        <label>Type</label>
       </div>
       <div class="mui-textfield mui-textfield--float-label">
         <input type="text">
-        <label>Input 1</label>
+        <label>Prix</label>
       </div>
-      <div class="mui-textfield mui-textfield--float-label">
-        <input type="text">
-        <label>Input 2</label>
-      </div>
-      <div class="mui-textfield mui-textfield--float-label">
-        <textarea></textarea>
-        <label>Textarea</label>
-      </div>
-      <button type="submit" class="mui-btn mui-btn--raised">Ajouter</button>
+      <button type="submit" class="mui-btn mui-btn--raised">Passer</button>
     </form>
 
 </template>
@@ -37,7 +39,10 @@
     name: 'order',
     data () {
       return {
-        market: []
+        market: [],
+        type: [
+          'Marché', 'ATP', 'Limité'
+        ]
       }
     },
     mounted () {
