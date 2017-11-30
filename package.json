@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "materialize-css": "^0.100.2",
     "vue": "^2.5.2",
     "vue-chartist": "^2.1.2",
     "vue-chartjs": "^3.0.2",
