@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" @click="onClick" v-model="toSearch">
+    <input type="text" @keyup="onClick" @click="onClick" v-model="toSearch">
     <table class="mui-table mui-table--bordered">
       <thead>
       <tr>
@@ -13,7 +13,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="item in palmares">
+      <tr v-for="item in elements">
         <td v-text="item.name"></td>
         <td v-text="item.dernier"></td>
         <td v-text="item.haut"></td>
@@ -33,6 +33,7 @@
     data () {
       return {
         palmares: [],
+        elements: [],
         toSearch: ''
       }
     },
@@ -40,6 +41,7 @@
       axios.get(`http://localhost:3000/api/palmares`)
         .then(response => {
           this.palmares = response.data
+          this.elements = this.palmares
         })
         .catch(error => {
           console.log(error)
@@ -47,7 +49,11 @@
     },
     methods: {
       onClick () {
-        this.market = this.market
+        if (this.$data.toSearch.length == 0) {
+          this.elements = this.palmares
+          return this.elements
+        } else {
+          this.elements = this.elements
           .filter(data => {
             return (RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.name)
               || RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.dernier)
@@ -57,6 +63,7 @@
               || RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.variation)
             )
           })
+        }
       }
     }
   }

@@ -1,10 +1,11 @@
 <template>
-  <chartist
+<p>A</p>
+  <!-- <chartist
     ratio="ct-major-second"
     type="Line"
     :data="chartData"
     :options="chartOptions" >
-  </chartist>
+  </chartist> -->
 </template>
 
 <script>
