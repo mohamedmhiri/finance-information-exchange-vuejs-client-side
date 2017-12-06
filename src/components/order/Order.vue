@@ -68,6 +68,16 @@
     methods: {
       onSubmit () {
         console.log(`${this.$data.req} ${this.$data.type} ${this.$data.marketName}`)
+        axios.post(`http://localhost:5000/api/logon`, {
+          //code: this.article.code,
+          //designation: this.article.designation,
+        })
+        .then(response => {
+          console.log(response)
+        })
+        .catch(error => {
+          console.log(error)
+        })
       }
     }
   }
