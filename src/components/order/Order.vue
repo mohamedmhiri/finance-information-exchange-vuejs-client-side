@@ -2,16 +2,16 @@
     <form class="mui-form" method="POST" @submit.prevent="onSubmit">
       <legend>Passer un ordre</legend>
       <div class="mui-select">
-        <select>
-          <option v-for="item in sens" >
-            <p v-text="item" v-model="req"></p>
+        <select v-model="req">
+          <option v-for="item in sens" v-bind:value="item">
+            <p v-text="item"></p>
           </option>
         </select>
         <label>Sens</label>
       </div>
       <div class="mui-select">
-        <select>
-          <option v-for="item in market" v-text="item.name" v-model="marketName"></option>
+        <select v-model="marketName">
+          <option v-for="item in market" v-text="item.name"></option>
         </select>
         <label>Nom</label>
       </div>
@@ -20,8 +20,8 @@
         <label>Quantité</label>
       </div>
       <div class="mui-select">
-        <select>
-          <option v-for="item in types" v-text="item" v-model="type"></option>
+        <select v-model="type">
+          <option v-for="item in types" v-text="item"></option>
         </select>
         <label>Type</label>
       </div>
@@ -50,7 +50,7 @@
         ],
         type: '',
         marketName: '',
-        req: '',
+        req: 'Achat',
         price: '',
         qty: '',
         errors: new Errors()
@@ -67,7 +67,7 @@
     },
     methods: {
       onSubmit () {
-        console.log(`${this.$data.req}`)
+        console.log(`${this.$data.req} ${this.$data.type} ${this.$data.marketName}`)
       }
     }
   }
