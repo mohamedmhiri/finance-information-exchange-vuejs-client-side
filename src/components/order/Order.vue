@@ -69,8 +69,8 @@
       onSubmit () {
         console.log(`${this.$data.req} ${this.$data.type} ${this.$data.marketName}`)
         axios.post(`http://localhost:5000/api/new-single-order`, {
-          sender: 'mohamed',
-          
+          email: this.$store.getters.email,
+          password: this.$store.getters.password
         })
         .then(response => {
           console.log(response)

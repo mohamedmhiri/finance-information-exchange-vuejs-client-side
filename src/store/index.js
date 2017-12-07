@@ -9,7 +9,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        isLoggedIn: !!localStorage.getItem('token')
+        isLoggedIn: !!localStorage.getItem('token'),
+        email: '',
+        password: ''
     },
     // mutations are the equivalents of reducers in Redux
     mutations: {
@@ -27,6 +29,8 @@ export default new Vuex.Store({
     // commits are the equivalents of actions in Redux
     actions: {
         login({ commit }, creds) {
+            this.state.email = creds.email,
+            this.state.password = creds.password
             commit(LOGIN); // show spinner
             return new Promise(resolve => {
                 setTimeout(() => {
@@ -45,6 +49,13 @@ export default new Vuex.Store({
     getters: {
         isLoggedIn: state => {
             return state.isLoggedIn
+        },
+        email: state => {
+            return state.email
+        }
+        ,
+        password: state => {
+            return state.password
         }
     }
 });
