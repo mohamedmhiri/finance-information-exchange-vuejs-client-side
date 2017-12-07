@@ -68,9 +68,9 @@
     methods: {
       onSubmit () {
         console.log(`${this.$data.req} ${this.$data.type} ${this.$data.marketName}`)
-        axios.post(`http://localhost:5000/api/logon`, {
-          //code: this.article.code,
-          //designation: this.article.designation,
+        axios.post(`http://localhost:5000/api/new-single-order`, {
+          sender: 'mohamed',
+          
         })
         .then(response => {
           console.log(response)
