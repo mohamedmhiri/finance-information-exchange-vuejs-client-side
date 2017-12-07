@@ -24,7 +24,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <form class="mui-form" method="POST" @submit.prevent="onSubmit">
+                    <form class="mui-form" method="POST" @submit.prevent="login({ email, password })">
                       <legend>Login</legend>
                       <div class="mui-textfield mui-textfield--float-label">
                         <input type="text" v-model="email">
@@ -51,64 +51,70 @@
 </template>
 
 <script>
-  export default {
-    name: 'material-login',
-    data () {
-      return {
-        'email': '',
-        'password': '',
-        'errors': {
-          'data': {
-            'email': '',
-            'password': ''
-          }
+import Vuex from 'vuex'
+export default {
+  name: "material-login",
+  data() {
+    return {
+      email: "",
+      password: "",
+      errors: {
+        data: {
+          email: "",
+          password: ""
         }
       }
-    },
-    methods: {
-      onSubmit () {
-        if (this.$data.email !== '') {
-
-        } else {
-          this.errors.data.email = 'Veuillez saisir un email'
-        }
-        if (this.$data.password !== '') {
-
-        } else {
-          this.errors.data.password = 'Veuillez saisir le mot de passe'
-        }
+    };
+  },
+  methods: {
+    login() {
+      if (this.$data.email !== "" && this.$data.password !== "") {
+        this.$store
+          .dispatch("login", {
+            email: this.email,
+            password: this.password
+          })
+          .then(() => {
+            this.$router.push("/");
+          });
+      } else if (this.$data.email === "") {
+        this.errors.data.email = "Veuillez saisir un email";
+      } else if (this.$data.password === "") {
+        this.errors.data.password = "Veuillez saisir le mot de passe";
       }
+      console.log(this.errors.data);
     }
   }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-  body,
-  .mui-body {
-    background-color: #eee;
-    font-size: 15px;
-  }
+body,
+.mui-body {
+  background-color: #eee;
+  font-size: 15px;
+}
 
-  .mui-container,
-  .mui-container-fixed {
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-  #content-wrapper h2 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
+.mui-container,
+.mui-container-fixed {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#content-wrapper h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 
-  #content-wrapper > tbody > tr > td {
-    padding-bottom: 15px;
-  }
+#content-wrapper > tbody > tr > td {
+  padding-bottom: 15px;
+}
 
-  #content-wrapper .mui--divider-top {
-    padding-top: 15px;
-  }
+#content-wrapper .mui--divider-top {
+  padding-top: 15px;
+}
 
-  #last-cell {
-    padding-bottom: 15px;
-  }
+#last-cell {
+  padding-bottom: 15px;
+}
 </style>
