@@ -58,7 +58,7 @@
           this.elements = this.market
           return this.elements
         } else {
-          this.elements = this.elements
+          this.elements = this.market
           .filter(data => {
             return (RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.name)
               || RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.dernier)
@@ -71,7 +71,7 @@
             )
           })
         }
-        
+
       }
     }
   }

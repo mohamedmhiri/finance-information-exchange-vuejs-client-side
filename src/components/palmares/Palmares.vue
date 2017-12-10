@@ -53,7 +53,7 @@
           this.elements = this.palmares
           return this.elements
         } else {
-          this.elements = this.elements
+          this.elements = this.palmares
           .filter(data => {
             return (RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.name)
               || RegExp(`.*(${this.$data.toSearch}).*`, 'i').test(data.dernier)
