@@ -2,7 +2,7 @@
     <form class="mui-form" method="POST" @submit.prevent="onSubmit">
       <legend>Passer un ordre</legend>
       <div class="mui-select">
-        <select v-model="req">
+        <select v-model="dir">
           <option v-for="item in sens" v-bind:value="item">
             <p v-text="item"></p>
           </option>
@@ -10,10 +10,10 @@
         <label>Sens</label>
       </div>
       <div class="mui-select">
-        <select v-model="marketName">
+        <select v-model="req">
           <option v-for="item in market" v-text="item.name"></option>
         </select>
-        <label>Nom</label>
+        <label>Symbole</label>
       </div>
       <div class="mui-textfield mui-textfield--float-label">
         <input type="number" v-model="qty">
@@ -49,8 +49,8 @@
           'Achat', 'Vente'
         ],
         type: '',
-        marketName: '',
-        req: 'Achat',
+        req: '',
+        dir: 'Achat',
         price: '',
         qty: '',
         errors: new Errors()
@@ -67,10 +67,15 @@
     },
     methods: {
       onSubmit () {
-        console.log(`${this.$data.req} ${this.$data.type} ${this.$data.marketName}`)
+        console.log(`${this.$data.dir} ${this.$data.type}`)
         axios.post(`http://localhost:5000/api/transaction`, {
-          email: this.$store.getters.email,
-          password: this.$store.getters.password
+          //email: this.$store.getters.email,
+          //password: this.$store.getters.password,
+          req: this.$data.req,
+          price: this.$data.price,
+          dir: this.$data.dir,
+          qty: this.$data.qty,
+          type: this.$data.type
         })
         .then(response => {
           console.log(response)

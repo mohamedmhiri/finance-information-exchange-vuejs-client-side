@@ -7,6 +7,7 @@ import Profile from '../components/profile/Profile.vue'
 import Wallet from '../components/wallet/Wallet.vue'
 import History from '../components/history/History.vue'
 import MaterialLogin from '../components/material-login/Material-Login.vue'
+import MaterialSignup from '../components/material-signup/Material-Signup'
 import Palmares from '../components/palmares/Palmares.vue'
 import News from '../components/news/News.vue'
 import Dashboard from '../components/dashboard/Dashboard.vue'
@@ -65,6 +66,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: MaterialLogin
+    },
+    {
+      path: '/signup',
+      name: 'SignUp',
+      component: MaterialSignup
     }
 
   ]
