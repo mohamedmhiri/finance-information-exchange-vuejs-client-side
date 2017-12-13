@@ -68,7 +68,7 @@
     methods: {
       onSubmit () {
         console.log(`${this.$data.req} ${this.$data.type} ${this.$data.marketName}`)
-        axios.post(`http://localhost:5000/api/new-single-order`, {
+        axios.post(`http://localhost:5000/api/transaction`, {
           email: this.$store.getters.email,
           password: this.$store.getters.password
         })
