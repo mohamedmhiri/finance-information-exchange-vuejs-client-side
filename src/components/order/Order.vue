@@ -2,7 +2,7 @@
     <form class="mui-form" method="POST" @submit.prevent="onSubmit">
       <legend>Passer un ordre</legend>
       <div class="mui-select">
-        <select v-model="dir">
+        <select v-model="toDo">
           <option v-for="item in sens" v-bind:value="item">
             <p v-text="item"></p>
           </option>
@@ -10,7 +10,7 @@
         <label>Sens</label>
       </div>
       <div class="mui-select">
-        <select v-model="req">
+        <select v-model="symbol">
           <option v-for="item in market" v-text="item.name"></option>
         </select>
         <label>Symbole</label>
@@ -49,8 +49,8 @@
           'Achat', 'Vente'
         ],
         type: '',
-        req: '',
-        dir: 'Achat',
+        symbol: '',
+        toDo: '',
         price: '',
         qty: '',
         errors: new Errors()
@@ -67,15 +67,20 @@
     },
     methods: {
       onSubmit () {
-        console.log(`${this.$data.dir} ${this.$data.type}`)
+        console.log(`${this.$data.toDo} ${this.$data.type}`)
+        let quantity = undefined
+        if (this.$data.type === 'Limité') {
+          quantity = this.$data.qty
+        }          
         axios.post(`http://localhost:5000/api/transaction`, {
           //email: this.$store.getters.email,
           //password: this.$store.getters.password,
-          req: this.$data.req,
+          symbol: this.$data.symbol,
           price: this.$data.price,
-          dir: this.$data.dir,
-          qty: this.$data.qty,
-          type: this.$data.type
+          toDo: this.$data.toDo,
+          qty: quantity,
+          type: this.$data.type,
+          state: 'inProgress'
         })
         .then(response => {
           console.log(response)
