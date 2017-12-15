@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Historique</h1>
+<div>
+    <h1>Ordres en cours</h1>
     <table class="mui-table mui-table--bordered">
       <thead>
       <tr>
@@ -32,17 +32,16 @@
 </template>
 
 <script>
-  import moment from 'moment'
-  import axios from 'axios'
-  export default {
-    name: 'history',
-    data () {
+import axios from 'axios'
+export default {
+  name: 'orderInProgress',
+  data () {
       return {
         transactions: []
       }
     },
     mounted () {
-      axios.get(`http://localhost:5000/api/transactions`)
+      axios.get(`http://localhost:5000/api/transaction/getBy/state/inProgress`)
         .then(response => {
           this.transactions = response.data
         })
@@ -50,7 +49,7 @@
           console.log(error)
         })
     }
-  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

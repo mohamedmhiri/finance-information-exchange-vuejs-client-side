@@ -11,7 +11,7 @@ import MaterialSignup from '../components/material-signup/Material-Signup'
 import Palmares from '../components/palmares/Palmares.vue'
 import News from '../components/news/News.vue'
 import Dashboard from '../components/dashboard/Dashboard.vue'
-
+import orderInProgress from '../components/order-in-progress/OrderInProgress'
 Vue.use(Router)
 
 export default new Router({
@@ -49,6 +49,11 @@ export default new Router({
           path: '/history',
           name: 'History',
           component: History
+        },
+        {
+          path: 'orderInProgress',
+          name: 'orderInProgress',
+          component: orderInProgress
         },
         {
           path: '/palmares',

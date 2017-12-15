@@ -24,6 +24,9 @@
         <strong><router-link to="/history" >Mouvements</router-link></strong>
       </li>
       <li>
+        <strong><router-link to="/orderInProgress" >Ordres en cours</router-link></strong>
+      </li>
+      <li>
         <strong><router-link to="/palmares" >Palmares</router-link></strong>
       </li>
       <li>

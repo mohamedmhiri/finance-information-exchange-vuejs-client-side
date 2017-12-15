@@ -68,17 +68,17 @@
     methods: {
       onSubmit () {
         console.log(`${this.$data.toDo} ${this.$data.type}`)
-        let quantity = undefined
+        let $price = undefined
         if (this.$data.type === 'Limité') {
-          quantity = this.$data.qty
+          $price = this.$data.price
         }          
         axios.post(`http://localhost:5000/api/transaction`, {
           //email: this.$store.getters.email,
           //password: this.$store.getters.password,
           symbol: this.$data.symbol,
-          price: this.$data.price,
+          price: $price,
           toDo: this.$data.toDo,
-          qty: quantity,
+          qty: this.$data.qty,
           type: this.$data.type,
           state: 'inProgress'
         })
