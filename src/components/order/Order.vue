@@ -25,7 +25,7 @@
         </select>
         <label>Type</label>
       </div>
-      <div class="mui-textfield mui-textfield--float-label">
+      <div class="mui-textfield mui-textfield--float-label" v-if="type == 'Limité'">
         <input type="text" v-model="price">
         <label>Prix</label>
       </div>
@@ -43,7 +43,7 @@
       return {
         market: [],
         types: [
-          'Marché', 'ATP', 'Limité'
+          'Marché', 'ATP', 'Limité', 'Stop', 'Meilleure limite'
         ],
         sens: [
           'Achat', 'Vente'

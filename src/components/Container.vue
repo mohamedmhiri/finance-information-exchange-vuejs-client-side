@@ -3,7 +3,7 @@
     <sidebar></sidebar>
     <material-header></material-header>
     <material-content></material-content>
-    <material-footer></material-footer>
+    <!-- <material-footer></material-footer> -->
   </div>
 </template>
 <script>

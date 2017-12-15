@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Historique</h1>
     <table class="mui-table mui-table--bordered">
       <thead>
       <tr>

@@ -35,6 +35,9 @@
                         <label>Mot de passe</label>
                       </div>
                       <button type="submit" class="mui-btn mui-btn--raised disabled">Login</button>
+                      <button class="mui-btn mui-btn--raised disabled">
+                        <router-link to="/signup">S'inscrire</router-link>
+                      </button>
                     </form>
                   </td>
                 </tr>
