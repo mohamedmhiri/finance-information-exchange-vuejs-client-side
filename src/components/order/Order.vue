@@ -72,7 +72,7 @@
         if (this.$data.type === 'Limité') {
           $price = this.$data.price
         }          
-        axios.post(`http://localhost:5000/api/transaction`, {
+        axios.post(`http://localhost:4000/api/transaction`, {
           //email: this.$store.getters.email,
           //password: this.$store.getters.password,
           symbol: this.$data.symbol,

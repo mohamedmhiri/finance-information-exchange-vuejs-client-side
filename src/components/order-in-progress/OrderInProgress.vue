@@ -41,7 +41,7 @@ export default {
       }
     },
     mounted () {
-      axios.get(`http://localhost:5000/api/transaction/getBy/state/inProgress`)
+      axios.get(`http://localhost:4000/api/transaction/getBy/state/inProgress`)
         .then(response => {
           this.transactions = response.data
         })

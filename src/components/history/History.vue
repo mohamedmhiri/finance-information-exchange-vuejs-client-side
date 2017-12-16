@@ -42,7 +42,7 @@
       }
     },
     mounted () {
-      axios.get(`http://localhost:5000/api/transactions`)
+      axios.get(`http://localhost:4000/api/transactions`)
         .then(response => {
           this.transactions = response.data
         })

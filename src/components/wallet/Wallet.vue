@@ -16,10 +16,10 @@
       </thead>
       <tbody>
       <tr v-for="item in transactions">
-        <td v-text="item.date"></td>
+        <td v-text="item.state"></td>
         <td v-text="item.updatedAt"></td>
-        <td v-text="item.dir"></td>
-        <td v-text="item.req"></td>
+        <td v-text="item.toDo"></td>
+        <td v-text="item.symbol"></td>
         <td v-text="item.qty"></td>
         <td v-text="item.price"></td>
         <td v-text="item.type"></td>
@@ -41,7 +41,7 @@
       }
     },
     mounted () {
-      axios.get(`http://localhost:5000/api/transactions`)
+      axios.get(`http://localhost:4000/api/transaction/getBy/state/done`)
         .then(response => {
           this.transactions = response.data
         })

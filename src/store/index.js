@@ -38,7 +38,7 @@ export default new Vuex.Store({
             this.state.email = creds.email,
             this.state.password = creds.password
             commit(LOGIN) // show spinner
-            return axios.post(`http://localhost:5000/api/authenticate`, {
+            return axios.post(`http://localhost:4000/api/authenticate`, {
                 email: this.state.email,
                 password: this.state.password,
                 
@@ -70,7 +70,7 @@ export default new Vuex.Store({
             this.state.password = creds.password
             this.state.name = creds.name
             commit(SIGNUP) // show spinner
-            return axios.post(`http://localhost:5000/api/signup`, {
+            return axios.post(`http://localhost:4000/api/signup`, {
                 email: this.state.email,
                 password: this.state.password,
                 name: this.state.name
