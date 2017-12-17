@@ -1,31 +1,30 @@
 <template>
   <div>
     <h1>Historique</h1>
-    <table class="mui-table mui-table--bordered">
+    <table class="ui very compact celled table">
       <thead>
-      <tr>
-        <th>Etat</th>
-        <th>Date</th>
-        <th>Sens</th>
-        <th>Symbole</th>
-        <th>Quantité</th>
-        <th>Prix</th>
-        <th>Type</th>
-        <th>Action</th>
-      </tr>
+        <tr>
+            <th>Etat</th>
+            <th>Date</th>
+            <th>Sens</th>
+            <th>Symbole</th>
+            <th>Quantité</th>
+            <th>Prix</th>
+            <th>Type</th>
+            <th>Action</th>
+          </tr>
       </thead>
       <tbody>
-      <tr v-for="item in transactions">
-        <td v-text="item.state"></td>
-        <td v-text="item.updatedAt"></td>
-        <td v-text="item.toDo"></td>
-        <td v-text="item.symbol"></td>
-        <td v-text="item.qty"></td>
-        <td v-text="item.price"></td>
-        <td v-text="item.type"></td>
-        <td>Modifier</td>
-
-      </tr>
+        <tr v-for="item in transactions">
+          <td v-text="item.state"></td>
+          <td v-text="item.updatedAt"></td>
+          <td v-text="item.toDo"></td>
+          <td v-text="item.symbol"></td>
+          <td v-text="item.qty"></td>
+          <td v-text="item.price"></td>
+          <td v-text="item.type"></td>
+          <td>Modifier</td>
+        </tr>
       </tbody>
     </table>
   </div>

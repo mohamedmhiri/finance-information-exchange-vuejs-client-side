@@ -1,18 +1,17 @@
 <template>
   <div>
-    <table class="mui-table mui-table--bordered">
+    <table class="ui very compact celled table">
       <thead>
-      <tr>
-        <th>Date</th>
-        <th>Nouvelle</th>
-      </tr>
+        <tr>
+            <th>Date</th>
+            <th>Nouvelle</th>
+          </tr>
       </thead>
       <tbody>
-      <tr v-for="item in news">
-        <td v-text="item.date"></td>
-        <td v-text="item.info"></td>
-
-      </tr>
+        <tr v-for="item in news">
+          <td v-text="item.date"></td>
+          <td v-text="item.info"></td>
+        </tr>
       </tbody>
     </table>
   </div>
