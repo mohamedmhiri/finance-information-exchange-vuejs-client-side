@@ -27,6 +27,9 @@ export default new Vuex.Store({
         },
         [LOGOUT](state) {
             state.isLoggedIn = false
+            this.state.email = ''
+            this.state.name = ''
+            this.state.password = ''
         },
         [SIGNUP](state){
             state.isLoggedIn = false
@@ -66,14 +69,11 @@ export default new Vuex.Store({
             commit(LOGOUT)
         },
         signUp({ commit }, creds) {
-            this.state.email = creds.email,
-            this.state.password = creds.password
-            this.state.name = creds.name
             commit(SIGNUP) // show spinner
             return axios.post(`http://localhost:4000/api/signup`, {
-                email: this.state.email,
-                password: this.state.password,
-                name: this.state.name
+                email: creds.email,
+                password: creds.password,
+                name: creds.name
             })
                 .then(resolve => {
                     setTimeout(() => {

@@ -25,6 +25,7 @@ export default {
     };
   },
   mounted () {
+    console.log(this.$store.getters.name+1)
       axios.get(`http://localhost:4000/api/get/${this.$store.getters.email}`)
         .then(response => {
           this.$data.username = response.name
