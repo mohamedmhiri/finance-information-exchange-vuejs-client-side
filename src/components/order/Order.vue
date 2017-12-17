@@ -1,6 +1,6 @@
 <template>
     <form class="ui form" method="POST" @submit.prevent="onSubmit">
-      <h4 class="ui dividing header">Passer un ordre</h4>
+      <h1 class="ui dividing header">Passer un ordre</h1>
       <div class="field">
         <label>Sens</label>
         <select v-model="toDo" class="ui fluid dropdown">
