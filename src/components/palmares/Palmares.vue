@@ -1,26 +1,29 @@
 <template>
   <div>
-    <input type="text" @keyup="onClick" @click="onClick" v-model="toSearch">
-    <table class="mui-table mui-table--bordered">
+    <div class="ui icon input">
+      <i class="search icon"></i>
+      <input type="text" @keyup="onClick" @click="onClick" v-model="toSearch">
+    </div>
+    <table class="ui very compact celled table">
       <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Dernier</th>
-        <th>Haut</th>
-        <th>Bas</th>
-        <th>Volume</th>
-        <th>variation</th>
-      </tr>
+        <tr>
+            <th>Nom</th>
+            <th>Dernier</th>
+            <th>Haut</th>
+            <th>Bas</th>
+            <th>Volume</th>
+            <th>variation</th>
+          </tr>
       </thead>
       <tbody>
-      <tr v-for="item in elements">
-        <td v-text="item.name"></td>
-        <td v-text="item.dernier"></td>
-        <td v-text="item.haut"></td>
-        <td v-text="item.bas"></td>
-        <td v-text="item.volume"></td>
-        <td v-text="item.variation"></td>
-      </tr>
+        <tr v-for="item in elements">
+          <td v-text="item.name"></td>
+          <td v-text="item.dernier"></td>
+          <td v-text="item.haut"></td>
+          <td v-text="item.bas"></td>
+          <td v-text="item.volume"></td>
+          <td v-text="item.variation"></td>
+        </tr>
       </tbody>
     </table>
   </div>

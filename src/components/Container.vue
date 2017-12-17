@@ -1,9 +1,15 @@
 <template>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header demo-layout-transparent">
-    <sidebar></sidebar>
+  <div>
     <material-header></material-header>
-    <material-content></material-content>
-    <!-- <material-footer></material-footer> -->
+    <div class="ui grid">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+    </div>
+    <div class="ui grid">
+        <sidebar></sidebar>
+        <material-content></material-content>
+    </div>
   </div>
 </template>
 <script>

@@ -9,7 +9,6 @@ export default {
   name: 'app'
 }
 </script>
-  require('material-design-lite')
 <style>
 
 </style>

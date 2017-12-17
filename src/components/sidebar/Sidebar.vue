@@ -1,5 +1,5 @@
 <template>
-  <div id="sidedrawer" class="mui--no-user-select">
+  <!-- <div id="sidedrawer" class="mui--no-user-select">
     <div id="sidedrawer-brand" class="mui--appbar-line-height">
       <span class="mui--text-title">PWA Exchange</span>
     </div>
@@ -37,7 +37,42 @@
       </li>
 
     </ul>
-  </div>
+  </div> -->
+  <div class="two wide column">
+            <div class="ui container">
+                <div class="ui secondary large vertical pointing fluid menu">
+                    <a class="ui simple dropdown item">
+                        Achats
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item"><i class="file text icon"></i> Devis</a>
+                            <a class="item"><i class="file text icon"></i> Commande</a>
+                            <a class="item"><i class="file text icon"></i> Bon de livraison</a>
+                            <a class="item"><i class="file text icon"></i> Avoir</a>
+                        </div>
+                    </a>
+                    <a class="ui simple dropdown item">
+                        Ventes
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item"><i class="file text icon"></i> Devis</a>
+                            <a class="item"><i class="file text icon"></i> Commande</a>
+                            <a class="item"><i class="file text icon"></i> Bon de livraison</a>
+                            <a class="item"><i class="file text icon"></i> Avoir</a>
+                        </div>
+                    </a>
+                    <a class="item">
+                        Réglements
+                    </a>
+                    <a class="item">
+                        Inventaire
+                    </a>
+                    <a class="item">
+                        Clôture
+                    </a>
+                </div>
+            </div>
+        </div>
 </template>
 <script>
 import Vuex from 'vuex'
