@@ -78,9 +78,9 @@ export default {
       if (this.$data.email !== "" && this.$data.password !== "" && this.$data.name) {
         this.$store
           .dispatch("signUp", {
-            name: this.name,
-            email: this.email,
-            password: this.password
+            name: this.$data.name,
+            email: this.$data.email,
+            password: this.$data.password
           })
           .then(() => {
             this.$router.push("/login");

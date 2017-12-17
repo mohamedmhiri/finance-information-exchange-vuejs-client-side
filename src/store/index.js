@@ -44,7 +44,6 @@ export default new Vuex.Store({
             return axios.post(`http://localhost:4000/api/authenticate`, {
                 email: this.state.email,
                 password: this.state.password,
-                
             })
                 .then(resolve => {
                     setTimeout(() => {
@@ -111,3 +110,14 @@ export default new Vuex.Store({
         }
     }
 })
+
+/* export function requireAuth(to, from, next) {
+     if (!this.$store.getters.isLoggedIn) {
+      next({
+        path: '/login'        
+      });
+    } else {
+      next();
+    }
+  }*/
+  

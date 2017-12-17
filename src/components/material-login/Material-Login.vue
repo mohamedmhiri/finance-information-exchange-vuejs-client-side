@@ -74,10 +74,11 @@ export default {
       if (this.$data.email !== "" && this.$data.password !== "") {
         this.$store
           .dispatch("login", {
-            email: this.email,
-            password: this.password
+            email: this.$data.email,
+            password: this.$data.password
           })
           .then(() => {
+            console.log(this.$data.email + "" + 1)
             this.$router.push("/");
           });
       } else if (this.$data.email === "") {
