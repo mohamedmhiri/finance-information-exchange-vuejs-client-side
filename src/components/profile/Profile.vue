@@ -1,16 +1,17 @@
 <template>
   <div>
-    <h1>Bienvenu</h1>
-    <div>
-      <h2 v-text="username"></h2>
-    </div>
-    <div class="mui-divider"></div>
-    <div>
-      <h2 v-text="email"></h2>
+    <h1 class="ui center aligned header">Bienvenu</h1>
+    <div class="ui text container">
+      <div class="ui segments">
+        <div class="ui segment">
+          <h2 v-text="username"></h2>
+        </div>
+        <div class="ui segment">
+          <h2 v-text="email"></h2>
+        </div>
+      </div>
     </div>
   </div>
-  
-
 </template>
 
 <script>

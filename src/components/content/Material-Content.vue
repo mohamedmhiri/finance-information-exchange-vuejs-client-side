@@ -1,7 +1,11 @@
 <template>
-  <div class="fourteen wide column">
-    <router-view></router-view>
+  <div>
+    <!-- <div class="two wide column"></div> -->
+    <div class="ui raised segment">
+      <router-view></router-view>
+    </div>
   </div>
+  
 </template>
 <script>
   export default {

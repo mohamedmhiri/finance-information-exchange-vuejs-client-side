@@ -38,7 +38,7 @@
 
     </ul>
   </div> -->
-  <div class="two wide column">
+  <!-- <div class="two wide column"> 
             <div class="ui container">
                 <div class="ui secondary large vertical pointing fluid menu">
                     <a class="ui simple dropdown item">
@@ -72,7 +72,19 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div>-->
+  <div>
+    <a class="item"><router-link to="/" >Tableau de board</router-link></a>
+    <a class="item"><router-link to="/profile" >Profil</router-link></a>
+    <a class="item"><router-link to="/wallet" >Portefeuille</router-link></a>
+    <a class="item"><router-link to="/market" >Marché</router-link></a>
+    <a class="item"><router-link to="/order" >Ordre</router-link></a>
+    <a class="item"><router-link to="/history" >Mouvements</router-link></a>
+    <a class="item"><router-link to="/orderInProgress" >Ordres en cours</router-link></a>
+    <a class="item"><router-link to="/palmares" >Palmares</router-link></a>
+    <a class="item"><router-link to="/news" >News</router-link></a>
+    <a class="item"><router-link to="/login">Logout</router-link></a>
+  </div>
 </template>
 <script>
 import Vuex from 'vuex'
