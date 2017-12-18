@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Portefeuil</h1>
+    <h1 class="ui dividing header">Portefeuille</h1>
+    
     <table class="mui-table mui-table--bordered">
       <thead>
       <tr>

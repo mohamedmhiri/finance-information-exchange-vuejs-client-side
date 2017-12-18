@@ -1,6 +1,7 @@
 <template>
 <div>
-    <h1>Ordres en cours</h1>
+    <h1 class="ui dividing header">Ordre en cours</h1>
+    
     <table class="ui very compact celled table">
       <thead>
         <tr>

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Historique</h1>
+    <h1 class="ui dividing header">Historique</h1>
+    
     <table class="ui very compact celled table">
       <thead>
         <tr>

@@ -6,34 +6,34 @@
     <div class="mui-divider"></div>
     <ul>
       <li>
-        <strong><router-link to="/" >Tableau de board</router-link></strong>
+        <strong>Tableau de board</strong>
       </li>
       <li>
-        <strong><router-link to="/profile" >Profil</router-link></strong>
+        <strong>Profil</strong>
       </li>
       <li>
-        <strong><router-link to="/wallet" >Portefeuille</router-link></strong>
+        <strong>Portefeuille</strong>
       </li>
       <li>
-        <strong><router-link to="/market" >Marché</router-link></strong>
+        <strong>Marché</strong>
       </li>
       <li>
-        <strong><router-link to="/order" >Ordre</router-link></strong>
+        <strong>Ordre</strong>
       </li>
       <li>
-        <strong><router-link to="/history" >Mouvements</router-link></strong>
+        <strong>Mouvements</strong>
       </li>
       <li>
-        <strong><router-link to="/orderInProgress" >Ordres en cours</router-link></strong>
+        <strong>Ordres en cours</strong>
       </li>
       <li>
-        <strong><router-link to="/palmares" >Palmares</router-link></strong>
+        <strong>Palmares</strong>
       </li>
       <li>
-        <strong><router-link to="/news" >News</router-link></strong>
+        <strong>News</strong>
       </li>
       <li>
-        <strong><router-link to="/login">Logout</router-link></strong>
+        <strong>Logout</strong>
       </li>
 
     </ul>
@@ -74,16 +74,16 @@
             </div>
         </div>-->
   <div>
-    <a class="item"><router-link to="/" >Tableau de board</router-link></a>
-    <a class="item"><router-link to="/profile" >Profil</router-link></a>
-    <a class="item"><router-link to="/wallet" >Portefeuille</router-link></a>
-    <a class="item"><router-link to="/market" >Marché</router-link></a>
-    <a class="item"><router-link to="/order" >Ordre</router-link></a>
-    <a class="item"><router-link to="/history" >Mouvements</router-link></a>
-    <a class="item"><router-link to="/orderInProgress" >Ordres en cours</router-link></a>
-    <a class="item"><router-link to="/palmares" >Palmares</router-link></a>
-    <a class="item"><router-link to="/news" >News</router-link></a>
-    <a class="item"><router-link to="/login">Logout</router-link></a>
+    <a class="item" @click="navTo('/')">Tableau de board</a>
+    <a class="item" @click="navTo('/profile')">Profil</a>
+    <a class="item" @click="navTo('/wallet')">Portefeuille</a>
+    <a class="item" @click="navTo('/market')">Marché</a>
+    <a class="item" @click="navTo('/order')">Ordre</a>
+    <a class="item" @click="navTo('/history')">Mouvements</a>
+    <a class="item" @click="navTo('/orderInProgress')">Ordres en cours</a>
+    <a class="item" @click="navTo('/palmares')">Palmares</a>
+    <a class="item" @click="navTo('/news')">News</a>
+    <a class="item" @click="navTo('/login')">Logout</a>
   </div>
 </template>
 <script>
@@ -91,7 +91,11 @@ import Vuex from 'vuex'
 export default {
   name: "sidebar",
   methods: {
-    ...Vuex.mapActions(["logout"])
+    ...Vuex.mapActions(["logout"]),
+    navTo (url) {
+      this.$router.push(url)
+    }
+
   },
   computed: {
     ...Vuex.mapGetters(["isLoggedIn"])

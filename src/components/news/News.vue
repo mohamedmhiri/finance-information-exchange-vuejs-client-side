@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h1 class="ui dividing header">News</h1>
+    
     <table class="ui very compact celled table">
       <thead>
         <tr>

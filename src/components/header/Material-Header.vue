@@ -4,8 +4,9 @@
             <a class="item">
                 <i class="building outline icon"></i> PWA Exchange
             </a>
-            <div class="right item">
-                <div class="ui input"><input placeholder="Rechercher..." type="text"></div>
+            <div class="right menu">
+                <a class="item">Sign Up</a>
+                <a class="item">Déconnexion</a>
             </div>
         </div>
     </div>

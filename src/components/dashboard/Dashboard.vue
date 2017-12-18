@@ -1,24 +1,26 @@
 <template>
   <div>
-    <form class="mui-form" method="POST" @submit.prevent="updateChart()">
-      <legend>Passer un ordre</legend>
-      <div class="mui-select">
-        <select v-model="month">
-          <option v-for="item in months" v-bind:value="item">
-            <p v-text="item"></p>
-          </option>
-        </select>
-        <label>Mois</label>
-      </div>
-      <div class="mui-select">
-        <select v-model="year">
-          <option v-for="item in years" v-text="item.name"></option>
-        </select>
-        <label>Année</label>
-      </div>
-      <button type="submit" class="mui-btn mui-btn--raised">Afficher</button>
+    <h1 class="ui dividing header">Dashboard</h1>
+    <form class="ui form" method="POST" @submit.prevent="updateChart()">
+        <div class="two fields">
+          <div class="field">
+            <label>Mois</label>
+            <select v-model="month" class="ui fluid dropdown">
+              <option v-for="item in months" v-text="item"></option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Année</label>
+            <select v-model="year" class="ui fluid dropdown">
+              <option v-for="item in years" v-text="item.name"></option>
+            </select>
+          </div>
+        </div>
+      <button class="ui button" type="submit">Afficher</button>
     </form>
     <div id="container" style="min-width: 310px;height: 400px; margin: 0 auto"></div>
+    <div id="container2" style="min-width: 310px;height: 400px; margin: 0 auto"></div>
+    <div id="container3" style="min-width: 310px;height: 400px; margin: 0 auto"></div>
   </div>
   <!-- <chartist
     ratio="ct-major-second"
@@ -29,7 +31,7 @@
 </template>
 
 <script>
-import axios from "axios"
+import axios from "axios";
 export default {
   name: "dashboard",
   data() {
@@ -88,6 +90,36 @@ export default {
           colorValue: 7
         }
       ],
+      trans: [
+        {
+          name: "a",
+          y: 0
+        },
+        {
+          name: "b",
+          y: 0
+        },
+        {
+          name: "c",
+          y: 0
+        },
+        {
+          name: "d",
+          y: 0
+        },
+        {
+          name: "e",
+          y: 0
+        },
+        {
+          name: "f",
+          y: 0
+        },
+        {
+          name: "g",
+          y: 0
+        }
+      ],
       qtyChartOptions: {
         colorAxis: {
           minColor: "#FFFFFF",
@@ -139,42 +171,204 @@ export default {
         title: {
           text: `Historique `
         }
+      },
+      nbrTransChartOptions: {
+        chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false,
+          type: "pie"
+        },
+        tooltip: {
+          pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+        },
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: "pointer",
+            dataLabels: {
+              enabled: false
+            },
+            showInLegend: true
+          }
+        },
+        series: [
+          {
+            name: "Nombre de Transactions",
+            colorByPoint: true,
+            data: [
+              {
+                name: "a",
+                y: 0
+              },
+              {
+                name: "b",
+                y: 0
+              },
+              {
+                name: "c",
+                y: 0
+              },
+              {
+                name: "d",
+                y: 0
+              },
+              {
+                name: "e",
+                y: 0
+              },
+              {
+                name: "f",
+                y: 0
+              },
+              {
+                name: "g",
+                y: 0
+              }
+            ]
+          }
+        ],
+        title: {
+          text: ``
+        }
+      },
+      closeChartOptions: {
+        chart: {
+          polar: true,
+          type: "line"
+        },
+
+        title: {
+          text: "",
+          x: -80
+        },
+
+        pane: {
+          size: "80%"
+        },
+
+        xAxis: {
+          categories: [
+            "Sales",
+            "Marketing",
+            "Development",
+            "Customer Support",
+            "Information Technology",
+            "Administration",
+            "aze"
+          ],
+          tickmarkPlacement: "on",
+          lineWidth: 0
+        },
+
+        yAxis: {
+          gridLineInterpolation: "polygon",
+          lineWidth: 0,
+          min: 0
+        },
+
+        tooltip: {
+          shared: true,
+          pointFormat:
+            '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+        },
+
+        legend: {
+          align: "right",
+          verticalAlign: "top",
+          y: 70,
+          layout: "vertical"
+        },
+
+        series: [
+          {
+            name: "Clôture",
+            data: [43000, 19000, 60000, 35000, 17000, 10000, 1000],
+            pointPlacement: "on"
+          }
+        ]
       }
-    }
+    };
   },
   watch: {
     // whenever question changes, this function will run
     cotations: function() {
-      this.qtyChartOptions.series[0].data = this.cotations
+      this.qtyChartOptions.series[0].data = this.cotations;
     }
   },
   methods: {
     updateChart() {
-      let histories = []
+      let histories = [];
+      let transactins = [];
+      let closes = []
+      let names = []
+      let values = []
       if (this.year == "2015") {
-        this.year = "15"
+        this.year = "15";
       }
       axios
-        .get(`http://localhost:5000/history/${this.year}/${this.month}`)
+        .get(`http://localhost:5000/history/${this.year}/${this.month}/qty`)
         .then(response => {
           response.data.forEach(element => {
-            histories.push(element[0])
-          })
+            histories.push(element[0]);
+          });
           histories.forEach((elem, key) => {
-            this.cotations[key].name = elem.value
-            this.cotations[key].value = elem.qty
-          })
-          this.qtyChartOptions.title.text = `Historique ${this.month}/${this.year}`
-          this.qtyChartOptions.series[0].data = this.cotations
-          Highcharts.chart("container", this.qtyChartOptions)
+            this.cotations[key].name = elem.value;
+            this.cotations[key].value = elem.qty;
+          });
+          this.qtyChartOptions.title.text = `Top 7 Valeurs/quantité négociée en ${this
+            .month}/${this.year}`;
+          this.qtyChartOptions.series[0].data = this.cotations;
+          Highcharts.chart("container", this.qtyChartOptions);
         })
         .catch(error => {
-          console.log(error)
+          console.log(error);
+        });
+      axios
+        .get(
+          `http://localhost:5000/history/${this.year}/${this.month}/tranNumb`
+        )
+        .then(response => {
+          response.data.forEach(element => {
+            transactins.push(element[0]);
+          });
+          console.log(response.data);
+          transactins.forEach((elem, key) => {
+            this.trans[key].name = elem.value;
+            this.trans[key].y = elem.tranNumb;
+          });
+          this.nbrTransChartOptions.title.text = `Top 7 Valeurs/nombre de transactions en ${this
+            .month}/${this.year}`;
+          this.nbrTransChartOptions.series[0].data = this.trans;
+          Highcharts.chart("container2", this.nbrTransChartOptions);
         })
+        .catch(error => {
+          console.log(error);
+        });
+      axios
+        .get(`http://localhost:5000/history/${this.year}/${this.month}/close`)
+        .then(response => {
+          response.data.forEach(element => {
+            closes.push(element[0]);
+          });
+          console.log(response.data);
+          closes.forEach((elem, key) => {
+            names.push(elem.value)
+            values.push(elem.close)
+          });
+          this.closeChartOptions.title.text = `Top 7 Valeurs/Clôture en ${this
+            .month}/${this.year}`;
+          this.closeChartOptions.series[0].data = values;
+          this.closeChartOptions.xAxis.categories = names
+          Highcharts.chart("container3", this.closeChartOptions);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   },
   mounted() {}
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

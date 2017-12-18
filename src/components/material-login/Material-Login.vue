@@ -94,7 +94,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-body,
+/* body,
 .mui-body {
   background-color: #eee;
   font-size: 15px;
@@ -120,5 +120,5 @@ body,
 
 #last-cell {
   padding-bottom: 15px;
-}
+} */
 </style>

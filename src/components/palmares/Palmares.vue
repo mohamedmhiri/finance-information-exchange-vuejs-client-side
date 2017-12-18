@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h1 class="ui dividing header">Palmares</h1>
+    
     <div class="ui icon input">
       <i class="search icon"></i>
       <input type="text" @keyup="onClick" @click="onClick" v-model="toSearch">
